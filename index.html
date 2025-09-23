@@ -377,14 +377,14 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
             margin-bottom: 3rem;
         }
 
         .service-card {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
@@ -810,10 +810,52 @@
 
             .services-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-card {
+                padding: 2.5rem;
+            }
+
+            .service-card h3 {
+                font-size: 1.6rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .service-card p {
+                margin-bottom: 1.5rem;
+                font-size: 1rem;
+                line-height: 1.7;
+            }
+
+            .service-features li {
+                padding: 0.8rem 0;
+                font-size: 1rem;
+                line-height: 1.6;
             }
 
             .efficiency-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .efficiency-item {
+                padding: 2rem;
+            }
+
+            .efficiency-item h4 {
+                font-size: 1.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .savings-percentage {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .efficiency-item p {
+                font-size: 1rem;
+                line-height: 1.6;
             }
 
             .about-content {
