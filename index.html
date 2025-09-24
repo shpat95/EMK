@@ -57,37 +57,18 @@
             align-items: center;
         }
 
-        .logo-image {
-            background: #f1f5f9;
-            padding: 12px 24px;
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .logo-top {
-            text-align: center;
-            font-size: 8px;
-            letter-spacing: 1.5px;
-            color: var(--text-light);
-            margin-bottom: 2px;
+        .logo-placeholder {
+            width: 120px;
+            height: 40px;
+            background: #e2e8f0;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: #64748b;
             font-weight: 500;
-        }
-
-        .logo-main {
-            text-align: center;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 4px;
-            color: var(--primary-color);
-            font-family: 'Inter', sans-serif;
-        }
-
-        .logo-bottom {
-            text-align: center;
-            font-size: 7px;
-            color: var(--text-light);
-            margin-top: 2px;
-            font-weight: 400;
         }
 
         nav ul {
@@ -444,7 +425,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            top: 0.8rem;
+            top: 0.6rem;
             color: var(--secondary-color);
             font-weight: bold;
             font-size: 1.2rem;
@@ -829,9 +810,15 @@
             }
 
             .service-features li {
-                padding: 0.8rem 0;
+                padding: 1rem 0;
                 font-size: 1rem;
                 line-height: 1.6;
+                padding-left: 2.5rem;
+            }
+
+            .service-features li::before {
+                top: 1rem;
+                left: 0.5rem;
             }
 
             .efficiency-grid {
@@ -881,13 +868,10 @@
                 flex-wrap: wrap;
             }
 
-            .logo-main {
-                font-size: 18px;
-                letter-spacing: 2px;
-            }
-
-            .logo-top, .logo-bottom {
-                font-size: 6px;
+            .logo-placeholder {
+                width: 100px;
+                height: 35px;
+                font-size: 0.7rem;
             }
         }
 
@@ -930,12 +914,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div class="logo-image">
-                        <div class="logo-top">ENERGIEBERATUNG</div>
-                        <div class="logo-top">MIT KOPF</div>
-                        <div class="logo-main">E M K</div>
-                        <div class="logo-bottom">INGENIEURBÜRO MAXIMILIANO</div>
-                    </div>
+                    <div class="logo-placeholder">Logo</div>
                 </div>
                 <nav>
                     <ul>
