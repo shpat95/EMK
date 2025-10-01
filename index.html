@@ -1,3 +1,7 @@
+.service-features {
+                margin-bottom: 2.5rem;
+            }
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -19,7 +23,7 @@
             --text-light: #64748b;
             --bg-light: #f8fafc;
             --white: #ffffff;
-            --dark-bg: #0f172a;
+            --dark-bg: #1e293b;
         }
 
         body {
@@ -36,13 +40,14 @@
 
         /* Header */
         header {
-            background: var(--white);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(6, 182, 212, 0.08);
         }
 
         .header-content {
@@ -171,7 +176,7 @@
         .hero-text h1 {
             font-size: 4rem;
             margin-bottom: 1rem;
-            margin-top: 2rem;
+            margin-top: 0.5rem;
             font-weight: 700;
             line-height: 1.1;
         }
@@ -369,7 +374,7 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
             transition: all 0.3s ease;
-            border: 1px solid rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -386,7 +391,7 @@
 
         .service-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.15);
         }
 
         .service-icon {
@@ -584,7 +589,7 @@
         /* Contact Section */
         .contact {
             padding: 6rem 0;
-            background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
+            background: linear-gradient(135deg, #475569 0%, #334155 50%, #1e293b 100%);
             color: var(--white);
             text-align: center;
             position: relative;
@@ -598,8 +603,19 @@
             left: 0;
             width: 40%;
             height: 100%;
-            background: linear-gradient(-45deg, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+            background: linear-gradient(-45deg, rgba(6, 182, 212, 0.2) 0%, rgba(59, 130, 246, 0.1) 70%);
             border-radius: 0 300px 0 0;
+        }
+
+        .contact::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(6, 182, 212, 0.1) 70%);
+            border-radius: 300px 0 0 0;
         }
 
         .contact-content {
@@ -658,9 +674,21 @@
 
         /* Footer */
         footer {
-            background: var(--dark-bg);
+            background: linear-gradient(135deg, #64748b 0%, #475569 100%);
             color: var(--white);
             padding: 4rem 0 2rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(6, 182, 212, 0.05) 0%, transparent 50%, rgba(59, 130, 246, 0.05) 100%);
+            pointer-events: none;
         }
 
         .footer-content {
@@ -668,6 +696,8 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
             margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
         }
 
         .footer-section h4 {
@@ -700,9 +730,11 @@
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid #334155;
-            opacity: 0.7;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
             font-size: 0.9rem;
+            position: relative;
+            z-index: 2;
         }
 
         /* Responsive Design */
@@ -1000,6 +1032,9 @@
                         <li>Einhaltung aller technischen und formalen Anforderungen</li>
                         <li>Begleitung von der Planung bis zur Auszahlung</li>
                     </ul>
+                    <a href="#" class="cta-button" onclick="event.preventDefault(); openServiceMail('Fördermittelberatung & Antragstellung'); return false;" style="width: 100%; margin-top: auto; text-align: center; display: block;">
+                        Kostenlose Beratung
+                    </a>
                 </div>
 
                 <div class="service-card">
@@ -1012,6 +1047,9 @@
                         <li>Mehr Kontrolle – weniger Stress</li>
                         <li>Fachliche Unterstützung bei Entscheidungen</li>
                     </ul>
+                    <a href="#" class="cta-button" onclick="event.preventDefault(); openServiceMail('Planung & Baubegleitung'); return false;" style="width: 100%; margin-top: auto; text-align: center; display: block;">
+                        Kostenlose Beratung
+                    </a>
                 </div>
 
                 <div class="service-card">
@@ -1024,6 +1062,9 @@
                         <li>Optimierung der Gebäudeenergieeffizienz</li>
                         <li>Herstellerunabhängige Beratung</li>
                     </ul>
+                    <a href="#" class="cta-button" onclick="event.preventDefault(); openServiceMail('Energieberatung'); return false;" style="width: 100%; margin-top: auto; text-align: center; display: block;">
+                        Kostenlose Beratung
+                    </a>
                 </div>
             </div>
         </div>
@@ -1224,7 +1265,35 @@
             });
         });
 
-        // Contact Form
+        // Service-spezifische E-Mail Funktion
+        function openServiceMail(serviceTitle) {
+            // E-Mail Daten für Service-Anfrage
+            const emailSubject = encodeURIComponent('Beratungsanfrage: ' + serviceTitle);
+            const emailBody = encodeURIComponent(
+                'Hallo,\n\n' +
+                'ich interessiere mich für Ihre Leistung: ' + serviceTitle + '\n\n' +
+                'Bitte kontaktieren Sie mich für ein unverbindliches Beratungsgespräch.\n\n' +
+                'Meine Kontaktdaten:\n' +
+                'Name: [Bitte hier eintragen]\n' +
+                'Telefon: [Bitte hier eintragen]\n' +
+                'E-Mail: [Bitte hier eintragen]\n\n' +
+                'Beste Erreichbarkeit: [Bitte hier eintragen]\n\n' +
+                'Mit freundlichen Grüßen'
+            );
+            
+            // Ihre E-Mail-Adresse hier eintragen
+            const recipientEmail = 'info@emk-energieberatung.de';
+            
+            // mailto-Link erstellen
+            const mailtoLink = 'mailto:' + recipientEmail + 
+                              '?subject=' + emailSubject + 
+                              '&body=' + emailBody;
+            
+            // E-Mail-App öffnen
+            window.location.href = mailtoLink;
+        }
+
+        // Contact Form - E-Mail öffnen
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -1232,13 +1301,39 @@
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Simple validation
-            if (data.name && data.email && data.message) {
-                alert('Vielen Dank für Ihre Anfrage! Wir melden uns schnellstmöglich bei Ihnen.');
-                this.reset();
-            } else {
+            // Validierung der Pflichtfelder
+            if (!data.name || !data.email || !data.message) {
                 alert('Bitte füllen Sie alle Pflichtfelder aus.');
+                return;
             }
+            
+            // E-Mail Daten zusammenstellen
+            const emailSubject = encodeURIComponent('Anfrage für Energieberatung von ' + data.name);
+            const emailBody = encodeURIComponent(
+                'Name: ' + data.name + '\n' +
+                'E-Mail: ' + data.email + '\n' +
+                'Telefon: ' + (data.phone || 'Nicht angegeben') + '\n\n' +
+                'Nachricht:\n' + data.message + '\n\n' +
+                '---\n' +
+                'Diese Anfrage wurde über die Website gesendet.'
+            );
+            
+            // Ihre E-Mail-Adresse hier eintragen
+            const recipientEmail = 'info@emk-energieberatung.de';
+            
+            // mailto-Link erstellen
+            const mailtoLink = 'mailto:' + recipientEmail + 
+                              '?subject=' + emailSubject + 
+                              '&body=' + emailBody;
+            
+            // E-Mail-App öffnen
+            window.location.href = mailtoLink;
+            
+            // Erfolgsbenachrichtigung
+            setTimeout(function() {
+                alert('Die E-Mail-App wird geöffnet. Bitte senden Sie die vorausgefüllte E-Mail ab.');
+                document.getElementById('contactForm').reset();
+            }, 500);
         });
 
         // Scroll Animation
