@@ -761,6 +761,43 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+        /* Hero Content - Stack vertically on mobile */
+              .hero-content {
+                  grid-template-columns: 1fr;
+                  gap: 2rem;
+              }
+              
+              .hero-right {
+                  order: -1; /* Logo und Card nach oben */
+              }
+              
+              /* Hero Logo kleiner auf Mobile */
+              .hero-logo {
+                  max-width: 180px;
+              }
+              
+              /* Hero Visual Card anpassen */
+              .hero-card {
+                  transform: rotate(0deg); /* Keine Rotation auf Mobile */
+                  padding: 1.5rem;
+              }
+              
+              .hero-card-icon {
+                  font-size: 2.5rem;
+                  margin-bottom: 0.8rem;
+              }
+              
+              .hero-card h3 {
+                  font-size: 1.3rem;
+                  margin-bottom: 0.5rem;
+              }
+              
+              .hero-card p {
+                  font-size: 0.95rem;
+              }
+
+
+          
             .hero-wrapper {
                 border-radius: 0 0 30px 30px;
                 margin-bottom: -30px;
@@ -815,8 +852,6 @@
                 top: -20px;
                 height: 40px;
             }
-
-
 
             .hero-text h1 {
                 font-size: 2.5rem;
@@ -1390,6 +1425,7 @@
     </script>
 </body>
 </html>
+
 
 
 
