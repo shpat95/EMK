@@ -148,15 +148,41 @@
         }
 
         .hero-content {
-            display: block;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
             position: relative;
             z-index: 2;
         }
 
+        .hero-right {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          align-items: center;
+        }
+
+        .hero-logo {
+          width: auto;
+          height: 60px;
+          background: rgba(255, 255, 255, 0.15);
+          backdrop-filter: blur(15px);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1rem;
+          color: rgba(255, 255, 255, 0.9);
+          font-weight: 600;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+          animation: logoFadeIn 1s ease-out;
+        }
+
         .hero-text {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 0;
         }
 
         .hero-text h1 {
@@ -949,12 +975,16 @@
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
-                  <img src="emk_logo.png" alt="EMK Logo">
                     <div class="hero-text">
                         <h1>Energieberatung</h1>
                         <div class="subtitle">Für dich</div>
                         <p>Optimiere die Energieeffizienz deines Gebäudes und senke die Kosten + Förderungen vom Staat gibt es dazu</p>
                         <a href="#contact" class="cta-button">Kostenlose Beratung anfordern</a>
+                    </div>
+
+                      <div class="hero-right">
+                    <div class="hero-logo">
+                    <img src="emk_logo.png" alt="EMK Logo">
                     </div>
                     <div class="hero-visual">
                         <div class="hero-card glass-effect">
@@ -963,6 +993,8 @@
                             <p>Moderne Lösungen für Ihr Zuhause</p>
                         </div>
                     </div>
+                </div>
+
                 </div>
             </div>
         </section>
@@ -1348,6 +1380,7 @@
     </script>
 </body>
 </html>
+
 
 
 
